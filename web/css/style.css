@@ -6312,5 +6312,11 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #e9ecef; } }
 
+/* Settings */
 .full-height {
   height: 100vh; }
+
+.user-form {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 25px; }

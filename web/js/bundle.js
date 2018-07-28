@@ -45809,4 +45809,17 @@ return jQuery;
 const $ = require('jquery');
 const angular = require('angular');
 
-},{"angular":2,"jquery":3}]},{},[4]);
+// Module Setup
+angular.module('giveHub', []).controller('MainCtrl', function MainCtrl() {
+
+});
+
+// Components
+const login = require('./component/gh-form-login/gh-form-login');
+
+},{"./component/gh-form-login/gh-form-login":5,"angular":2,"jquery":3}],5:[function(require,module,exports){
+angular.module('giveHub').component('ghFormLogin', {
+  templateUrl: './component/gh-form-login.html',
+});
+
+},{}]},{},[4]);
