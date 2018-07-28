@@ -1,0 +1,33 @@
+{
+  "name": "h4h2018-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "serve": "node server.js",
+    "build": "gulp build --gulpfile builder.js",
+    "watch": "gulp --gulpfile builder.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nyancat-h4h2018/frontend.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nyancat-h4h2018/frontend/issues"
+  },
+  "homepage": "https://github.com/nyancat-h4h2018/frontend#readme",
+  "dependencies": {
+    "angular": "^1.7.2",
+    "bootstrap": "^4.1.3",
+    "browserify": "^16.2.2",
+    "express": "^4.16.3",
+    "gulp-sass": "^4.0.1",
+    "jquery": "^3.3.1"
+  },
+  "devDependencies": {
+    "gulp": "github:gulpjs/gulp#4.0"
+  }
+}
