@@ -45821,6 +45821,7 @@ const about = require('./component/gh-page-about/gh-page-about');
 const volunteer = require('./component/gh-page-volunteer/gh-page-volunteer');
 const org = require('./component/gh-page-org/gh-page-org');
 const login = require('./component/gh-form-login/gh-form-login');
+const loginU = require('./component/gh-form-login-u/gh-form-login-u');
 const signupUser = require('./component/gh-form-signup-user/gh-form-signup-user');
 const signupOrg = require('./component/gh-form-signup-org/gh-form-signup-org');
 
@@ -45837,22 +45838,27 @@ const orManage = require('./component/or-page-manage/or-page-manage');
 const orProfile = require('./component/or-page-profile/or-page-profile');
 const orUpload = require('./component/or-upload-csv/or-upload-csv');
 
-},{"./component/gh-form-login/gh-form-login":5,"./component/gh-form-signup-org/gh-form-signup-org":6,"./component/gh-form-signup-user/gh-form-signup-user":7,"./component/gh-navbar/gh-navbar":8,"./component/gh-page-about/gh-page-about":9,"./component/gh-page-home/gh-page-home":10,"./component/gh-page-org/gh-page-org":11,"./component/gh-page-volunteer/gh-page-volunteer":12,"./component/or-navbar/or-navbar":13,"./component/or-page-dashboard/or-page-dashboard":14,"./component/or-page-manage/or-page-manage":15,"./component/or-page-profile/or-page-profile":16,"./component/or-upload-csv/or-upload-csv":17,"./component/vo-navbar/vo-navbar":18,"./component/vo-page-dashboard/vo-page-dashboard":19,"./component/vo-page-donate/vo-page-donate":20,"./component/vo-page-profile/vo-page-profile":21,"./controller/giveHub":22,"./controller/orPortal":23,"./controller/voPortal":24,"angular":2,"jquery":3}],5:[function(require,module,exports){
+},{"./component/gh-form-login-u/gh-form-login-u":5,"./component/gh-form-login/gh-form-login":6,"./component/gh-form-signup-org/gh-form-signup-org":7,"./component/gh-form-signup-user/gh-form-signup-user":8,"./component/gh-navbar/gh-navbar":9,"./component/gh-page-about/gh-page-about":10,"./component/gh-page-home/gh-page-home":11,"./component/gh-page-org/gh-page-org":12,"./component/gh-page-volunteer/gh-page-volunteer":13,"./component/or-navbar/or-navbar":14,"./component/or-page-dashboard/or-page-dashboard":15,"./component/or-page-manage/or-page-manage":16,"./component/or-page-profile/or-page-profile":17,"./component/or-upload-csv/or-upload-csv":18,"./component/vo-navbar/vo-navbar":19,"./component/vo-page-dashboard/vo-page-dashboard":20,"./component/vo-page-donate/vo-page-donate":21,"./component/vo-page-profile/vo-page-profile":22,"./controller/giveHub":23,"./controller/orPortal":24,"./controller/voPortal":25,"angular":2,"jquery":3}],5:[function(require,module,exports){
+angular.module('giveHub').component('ghFormLoginU', {
+  templateUrl: './component/gh-form-login-u.html',
+});
+
+},{}],6:[function(require,module,exports){
 angular.module('giveHub').component('ghFormLogin', {
   templateUrl: './component/gh-form-login.html',
 });
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 angular.module('giveHub').component('ghFormSignupOrg', {
   templateUrl: './component/gh-form-signup-Org.html',
 });
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 angular.module('giveHub').component('ghFormSignupUser', {
   templateUrl: './component/gh-form-signup-user.html',
 });
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 angular.module('giveHub').component('ghNavbar', {
   templateUrl: './component/gh-navbar.html',
   controller: ghNavbarController,
@@ -45871,27 +45877,27 @@ function ghNavbarController($scope) {
   }
 }
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 angular.module('giveHub').component('ghPageAbout', {
   templateUrl: './component/gh-page-about.html',
 });
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 angular.module('giveHub').component('ghPageHome', {
   templateUrl: './component/gh-page-home.html',
 });
 
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 angular.module('giveHub').component('ghPageOrg', {
   templateUrl: './component/gh-page-org.html',
 });
 
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 angular.module('giveHub').component('ghPageVolunteer', {
   templateUrl: './component/gh-page-volunteer.html',
 });
 
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 angular.module('orPortal').component('orNavbar', {
   templateUrl: './component/or-navbar.html',
   controller: ghNavbarController,
@@ -45910,17 +45916,17 @@ function ghNavbarController($scope) {
   }
 }
 
-},{}],14:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 angular.module('orPortal').component('orPageDashboard', {
   templateUrl: './component/or-page-dashboard.html',
 });
 
-},{}],15:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 angular.module('orPortal').component('orPageManage', {
   templateUrl: './component/or-page-manage.html',
 });
 
-},{}],16:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 angular.module('orPortal').component('orPageProfile', {
   templateUrl: './component/or-page-profile.html',
   controller: voPageProfileController,
@@ -45941,7 +45947,7 @@ function voPageProfileController($scope) {
   // }
 }
 
-},{}],17:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 angular.module('orPortal').component('orUploadCsv', {
   templateUrl: './component/or-upload-csv.html',
   controller: orUploadCsvController,
@@ -46018,7 +46024,7 @@ angular.module("orUploadCsv.directive.dropzone", []).directive("dropZone", [
     }
 ]);
 
-},{}],18:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 angular.module('voPortal').component('voNavbar', {
   templateUrl: './component/vo-navbar.html',
   controller: ghNavbarController,
@@ -46037,12 +46043,12 @@ function ghNavbarController($scope) {
   }
 }
 
-},{}],19:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 angular.module('voPortal').component('voPageDashboard', {
   templateUrl: './component/vo-page-dashboard.html',
 });
 
-},{}],20:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 angular.module('voPortal').component('voPageDonate', {
   templateUrl: './component/vo-page-donate.html',
   controller: voPageDonateController
@@ -46121,7 +46127,7 @@ function voPageDonateController($scope) {
   }
 }
 
-},{}],21:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 angular.module('voPortal').component('voPageProfile', {
   templateUrl: './component/vo-page-profile.html',
   controller: voPageProfileController,
@@ -46142,21 +46148,21 @@ function voPageProfileController($scope) {
   }
 }
 
-},{}],22:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 var giveHub = angular.module('giveHub', []);
 
 giveHub.controller('mainController', ($scope) => {
   $scope.route = 'home';
 });
 
-},{}],23:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 var orPortal = angular.module('orPortal', ["orUploadCsv.directive.dropzone"]);
 
 orPortal.controller('mainController', ($scope) => {
   $scope.route = 'dashboard';
 });
 
-},{}],24:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 var voPortal = angular.module('voPortal', []);
 
 voPortal.controller('mainController', ($scope) => {

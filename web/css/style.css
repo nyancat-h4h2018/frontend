@@ -6342,6 +6342,9 @@ body {
   background-color: #fa5770;
   color: #fff; }
 
+.profilecard {
+  height: 275px; }
+
 #map {
   height: 100%; }
 

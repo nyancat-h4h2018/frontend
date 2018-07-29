@@ -13,6 +13,7 @@ const about = require('./component/gh-page-about/gh-page-about');
 const volunteer = require('./component/gh-page-volunteer/gh-page-volunteer');
 const org = require('./component/gh-page-org/gh-page-org');
 const login = require('./component/gh-form-login/gh-form-login');
+const loginU = require('./component/gh-form-login-u/gh-form-login-u');
 const signupUser = require('./component/gh-form-signup-user/gh-form-signup-user');
 const signupOrg = require('./component/gh-form-signup-org/gh-form-signup-org');
 
