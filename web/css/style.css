@@ -6317,8 +6317,14 @@ a.text-dark:hover, a.text-dark:focus {
 #navbar {
   margin-top: 2.5rem;
   margin-bottom: 1rem; }
+  #navbar .nav-item {
+    margin: 5px; }
+    #navbar .nav-item :hover {
+      border: 1px solid #007bff; }
   #navbar .active {
-    font-weight: bold; }
+    font-weight: bold;
+    background-color: #007bff;
+    color: #fff; }
 
 .full-height {
   height: 100vh; }
