@@ -4,6 +4,7 @@ const angular = require('angular');
 // Controllers
 const giveHub = require('./controller/giveHub');
 const voPortal = require('./controller/voPortal');
+const orPortal = require('./controller/orPortal');
 
 // GiveHub Components
 const ghNavbar = require('./component/gh-navbar/gh-navbar');
@@ -17,3 +18,6 @@ const signupOrg = require('./component/gh-form-signup-org/gh-form-signup-org');
 
 // VoPortal Components
 const voNavbar = require('./component/vo-navbar/vo-navbar');
+
+// OrPortal Components
+const orNavbar = require('./component/or-navbar/or-navbar');

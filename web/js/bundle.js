@@ -45812,6 +45812,7 @@ const angular = require('angular');
 // Controllers
 const giveHub = require('./controller/giveHub');
 const voPortal = require('./controller/voPortal');
+const orPortal = require('./controller/orPortal');
 
 // GiveHub Components
 const ghNavbar = require('./component/gh-navbar/gh-navbar');
@@ -45826,7 +45827,10 @@ const signupOrg = require('./component/gh-form-signup-org/gh-form-signup-org');
 // VoPortal Components
 const voNavbar = require('./component/vo-navbar/vo-navbar');
 
-},{"./component/gh-form-login/gh-form-login":5,"./component/gh-form-signup-org/gh-form-signup-org":6,"./component/gh-form-signup-user/gh-form-signup-user":7,"./component/gh-navbar/gh-navbar":8,"./component/gh-page-about/gh-page-about":9,"./component/gh-page-home/gh-page-home":10,"./component/gh-page-org/gh-page-org":11,"./component/gh-page-volunteer/gh-page-volunteer":12,"./component/vo-navbar/vo-navbar":13,"./controller/giveHub":14,"./controller/voPortal":15,"angular":2,"jquery":3}],5:[function(require,module,exports){
+// OrPortal Components
+const orNavbar = require('./component/or-navbar/or-navbar');
+
+},{"./component/gh-form-login/gh-form-login":5,"./component/gh-form-signup-org/gh-form-signup-org":6,"./component/gh-form-signup-user/gh-form-signup-user":7,"./component/gh-navbar/gh-navbar":8,"./component/gh-page-about/gh-page-about":9,"./component/gh-page-home/gh-page-home":10,"./component/gh-page-org/gh-page-org":11,"./component/gh-page-volunteer/gh-page-volunteer":12,"./component/or-navbar/or-navbar":13,"./component/vo-navbar/vo-navbar":14,"./controller/giveHub":15,"./controller/orPortal":16,"./controller/voPortal":17,"angular":2,"jquery":3}],5:[function(require,module,exports){
 angular.module('giveHub').component('ghFormLogin', {
   templateUrl: './component/gh-form-login.html',
 });
@@ -45881,6 +45885,25 @@ angular.module('giveHub').component('ghPageVolunteer', {
 });
 
 },{}],13:[function(require,module,exports){
+angular.module('orPortal').component('orNavbar', {
+  templateUrl: './component/or-navbar.html',
+  controller: ghNavbarController,
+  bindings: {
+    route: '='
+  }
+});
+
+function ghNavbarController($scope) {
+  this.$onInit = function() {
+    console.log(this.route);
+  };
+
+  this.changePage = (newRoute) => {
+    this.route = newRoute;
+  }
+}
+
+},{}],14:[function(require,module,exports){
 angular.module('voPortal').component('voNavbar', {
   templateUrl: './component/vo-navbar.html',
   controller: ghNavbarController,
@@ -45899,14 +45922,21 @@ function ghNavbarController($scope) {
   }
 }
 
-},{}],14:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 var giveHub = angular.module('giveHub', []);
 
 giveHub.controller('mainController', ($scope) => {
   $scope.route = 'home';
 });
 
-},{}],15:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
+var orPortal = angular.module('orPortal', []);
+
+orPortal.controller('mainController', ($scope) => {
+  $scope.route = 'dashboard';
+});
+
+},{}],17:[function(require,module,exports){
 var voPortal = angular.module('voPortal', []);
 
 voPortal.controller('mainController', ($scope) => {
