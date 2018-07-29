@@ -9,7 +9,7 @@ angular.module('voPortal').component('voNavbar', {
 function ghNavbarController($scope) {
   this.$onInit = function() {
     console.log(this.route);
-  };
+  }
 
   this.changePage = (newRoute) => {
     this.route = newRoute;

@@ -7,7 +7,7 @@ const path = require('path');
 /*
   Settings
 */
-const port = 3000;
+const port = 3001;
 const folder_website = 'web';
 
 /*
