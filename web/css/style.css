@@ -6318,13 +6318,13 @@ a.text-dark:hover, a.text-dark:focus {
   margin-top: 2.5rem;
   margin-bottom: 1rem; }
   #navbar .nav-item {
-    margin: 5px; }
+    margin: 5px;
+    font-weight: bold; }
     #navbar .nav-item :hover {
       border: 1px solid #007bff; }
-  #navbar .active {
-    font-weight: bold;
-    background-color: #007bff;
-    color: #fff; }
+    #navbar .nav-item .active {
+      background-color: #007bff;
+      color: #fff; }
 
 .full-height {
   height: 100vh; }
@@ -6333,3 +6333,38 @@ a.text-dark:hover, a.text-dark:focus {
   border: 1px solid #ddd;
   border-radius: 10px;
   padding: 25px; }
+
+/* Dropzone */
+.dropzone {
+  cursor: pointer;
+  overflow: hidden;
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background: whitesmoke;
+  border-radius: 4px;
+  font: caption;
+  text-align: center;
+  border: 1px dotted silver;
+  box-sizing: border-box; }
+  .dropzone p {
+    padding-top: 16px;
+    font-size: 16px; }
+  .dropzone span {
+    display: block;
+    font-size: 10px; }
+  .dropzone img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100px; }
+  .dropzone input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-size: 9999px;
+    opacity: 0;
+    cursor: pointer; }

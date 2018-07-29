@@ -45835,8 +45835,9 @@ const orNavbar = require('./component/or-navbar/or-navbar');
 const orDashboard = require('./component/or-page-dashboard/or-page-dashboard');
 const orManage = require('./component/or-page-manage/or-page-manage');
 const orProfile = require('./component/or-page-profile/or-page-profile');
+const orUpload = require('./component/or-upload-csv/or-upload-csv');
 
-},{"./component/gh-form-login/gh-form-login":5,"./component/gh-form-signup-org/gh-form-signup-org":6,"./component/gh-form-signup-user/gh-form-signup-user":7,"./component/gh-navbar/gh-navbar":8,"./component/gh-page-about/gh-page-about":9,"./component/gh-page-home/gh-page-home":10,"./component/gh-page-org/gh-page-org":11,"./component/gh-page-volunteer/gh-page-volunteer":12,"./component/or-navbar/or-navbar":13,"./component/or-page-dashboard/or-page-dashboard":14,"./component/or-page-manage/or-page-manage":15,"./component/or-page-profile/or-page-profile":16,"./component/vo-navbar/vo-navbar":17,"./component/vo-page-dashboard/vo-page-dashboard":18,"./component/vo-page-donate/vo-page-donate":19,"./component/vo-page-profile/vo-page-profile":20,"./controller/giveHub":21,"./controller/orPortal":22,"./controller/voPortal":23,"angular":2,"jquery":3}],5:[function(require,module,exports){
+},{"./component/gh-form-login/gh-form-login":5,"./component/gh-form-signup-org/gh-form-signup-org":6,"./component/gh-form-signup-user/gh-form-signup-user":7,"./component/gh-navbar/gh-navbar":8,"./component/gh-page-about/gh-page-about":9,"./component/gh-page-home/gh-page-home":10,"./component/gh-page-org/gh-page-org":11,"./component/gh-page-volunteer/gh-page-volunteer":12,"./component/or-navbar/or-navbar":13,"./component/or-page-dashboard/or-page-dashboard":14,"./component/or-page-manage/or-page-manage":15,"./component/or-page-profile/or-page-profile":16,"./component/or-upload-csv/or-upload-csv":17,"./component/vo-navbar/vo-navbar":18,"./component/vo-page-dashboard/vo-page-dashboard":19,"./component/vo-page-donate/vo-page-donate":20,"./component/vo-page-profile/vo-page-profile":21,"./controller/giveHub":22,"./controller/orPortal":23,"./controller/voPortal":24,"angular":2,"jquery":3}],5:[function(require,module,exports){
 angular.module('giveHub').component('ghFormLogin', {
   templateUrl: './component/gh-form-login.html',
 });
@@ -45941,6 +45942,80 @@ function voPageProfileController($scope) {
 }
 
 },{}],17:[function(require,module,exports){
+angular.module('orPortal').component('orUploadCsv', {
+  templateUrl: './component/or-upload-csv.html',
+  controller: orUploadCsvController,
+  controllerAs: 'ctrl',
+});
+
+function orUploadCsvController($scope) {
+  var ctrl = this;
+  ctrl.data = { upload: [] };
+}
+
+angular.module("orUploadCsv.directive.dropzone", []).directive("dropZone", [
+    function() {
+        var config = {
+            template:
+                '<label class="drop-zone">' +
+                '<input type="file" multiple accept="jpg" />' +
+                "<div ng-transclude></div>" + // <= transcluded stuff
+                "</label>",
+            transclude: true,
+            replace: true,
+            require: "?ngModel",
+            link: function(scope, element, attributes, ngModel) {
+                var upload = element[0].querySelector("input");
+                upload.addEventListener("dragover", uploadDragOver, false);
+                upload.addEventListener("drop", uploadFileSelect, false);
+                upload.addEventListener("change", uploadFileSelect, false);
+                config.scope = scope;
+                config.model = ngModel;
+            }
+        };
+        return config;
+
+        // Helper functions
+        function uploadDragOver(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            e.dataTransfer.dropEffect = "copy";
+        }
+        function uploadFileSelect(e) {
+            console.log(this);
+            e.stopPropagation();
+            e.preventDefault();
+            var files = e.dataTransfer ? e.dataTransfer.files : e.target.files;
+            for (var i = 0, file; (file = files[i]); ++i) {
+                console.log(file);
+                var reader = new FileReader();
+                reader.onload = (function(file) {
+                    return function(e) {
+                        // Data handling (just a basic example):
+                        // [object File] produces an empty object on the model
+                        // why we copy the properties to an object containing
+                        // the Filereader base64 data from e.target.result
+                        var data = {
+                            data: e.target.result,
+                            dataSize: e.target.result.length
+                        };
+                        for (var p in file) {
+                            data[p] = file[p];
+                        }
+                        console.log(data);
+
+                        config.scope.$apply(function() {
+                            config.model.$viewValue.push(data);
+                        });
+                    };
+                })(file);
+                reader.readAsDataURL(file);
+            }
+        }
+    }
+]);
+
+},{}],18:[function(require,module,exports){
 angular.module('voPortal').component('voNavbar', {
   templateUrl: './component/vo-navbar.html',
   controller: ghNavbarController,
@@ -45959,17 +46034,17 @@ function ghNavbarController($scope) {
   }
 }
 
-},{}],18:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 angular.module('voPortal').component('voPageDashboard', {
   templateUrl: './component/vo-page-dashboard.html',
 });
 
-},{}],19:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 angular.module('voPortal').component('voPageDonate', {
   templateUrl: './component/vo-page-donate.html',
 });
 
-},{}],20:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 angular.module('voPortal').component('voPageProfile', {
   templateUrl: './component/vo-page-profile.html',
   controller: voPageProfileController,
@@ -45990,21 +46065,21 @@ function voPageProfileController($scope) {
   }
 }
 
-},{}],21:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 var giveHub = angular.module('giveHub', []);
 
 giveHub.controller('mainController', ($scope) => {
   $scope.route = 'home';
 });
 
-},{}],22:[function(require,module,exports){
-var orPortal = angular.module('orPortal', []);
+},{}],23:[function(require,module,exports){
+var orPortal = angular.module('orPortal', ["orUploadCsv.directive.dropzone"]);
 
 orPortal.controller('mainController', ($scope) => {
   $scope.route = 'dashboard';
 });
 
-},{}],23:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 var voPortal = angular.module('voPortal', []);
 
 voPortal.controller('mainController', ($scope) => {

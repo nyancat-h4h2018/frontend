@@ -13,16 +13,16 @@ $radius: 10px;
 
   .nav-item {
     margin: 5px;
+    font-weight: bold;
 
     :hover {
       border: 1px solid $accent;
     }
-  }
 
-  .active {
-    font-weight: bold;
-    background-color: $accent;
-    color: $white;
+    .active {
+      background-color: $accent;
+      color: $white;
+    }
   }
 }
 
@@ -34,4 +34,47 @@ $radius: 10px;
   border: 1px solid $border-color;
   border-radius: $radius;
   padding: 25px;
+}
+
+/* Dropzone */
+.dropzone {
+    cursor: pointer;
+    overflow: hidden;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100px;
+    background: whitesmoke;
+    border-radius: 4px;
+    font: caption;
+    text-align: center;
+    border: 1px dotted silver;
+    box-sizing: border-box;
+
+    // Transcluded content
+    p {
+        padding-top: 16px;
+        font-size: 16px;
+    }
+    span {
+        display: block;
+        font-size: 10px;
+    }
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100px;
+    }
+    // File input
+    input {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        font-size: 9999px; // <= Lazy dog – cover it all
+        opacity: 0;
+        cursor: pointer;
+    }
 }

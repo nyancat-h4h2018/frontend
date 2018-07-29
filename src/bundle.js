@@ -27,3 +27,4 @@ const orNavbar = require('./component/or-navbar/or-navbar');
 const orDashboard = require('./component/or-page-dashboard/or-page-dashboard');
 const orManage = require('./component/or-page-manage/or-page-manage');
 const orProfile = require('./component/or-page-profile/or-page-profile');
+const orUpload = require('./component/or-upload-csv/or-upload-csv');
