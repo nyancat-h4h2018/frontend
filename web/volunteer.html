@@ -11,6 +11,8 @@
   <body ng-app="voPortal" ng-controller="mainController">
     <vo-navbar route="route"></vo-navbar>
 
+    <vo-page-dashboard ng-if="route == 'dashboard'"></vo-page-dashboard>
+    <vo-page-donate ng-if="route == 'donate'"></vo-page-donate>
     <vo-page-profile ng-if="route == 'profile'"></vo-page-profile>
   </body>
 </html>

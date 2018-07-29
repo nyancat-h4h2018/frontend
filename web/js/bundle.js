@@ -45827,11 +45827,12 @@ const signupOrg = require('./component/gh-form-signup-org/gh-form-signup-org');
 // VoPortal Components
 const voNavbar = require('./component/vo-navbar/vo-navbar');
 const voProfile = require('./component/vo-page-profile/vo-page-profile');
+const voDonate = require('./component/vo-page-donate/vo-page-donate');
 
 // OrPortal Components
 const orNavbar = require('./component/or-navbar/or-navbar');
 
-},{"./component/gh-form-login/gh-form-login":5,"./component/gh-form-signup-org/gh-form-signup-org":6,"./component/gh-form-signup-user/gh-form-signup-user":7,"./component/gh-navbar/gh-navbar":8,"./component/gh-page-about/gh-page-about":9,"./component/gh-page-home/gh-page-home":10,"./component/gh-page-org/gh-page-org":11,"./component/gh-page-volunteer/gh-page-volunteer":12,"./component/or-navbar/or-navbar":13,"./component/vo-navbar/vo-navbar":14,"./component/vo-page-profile/vo-page-profile":15,"./controller/giveHub":16,"./controller/orPortal":17,"./controller/voPortal":18,"angular":2,"jquery":3}],5:[function(require,module,exports){
+},{"./component/gh-form-login/gh-form-login":5,"./component/gh-form-signup-org/gh-form-signup-org":6,"./component/gh-form-signup-user/gh-form-signup-user":7,"./component/gh-navbar/gh-navbar":8,"./component/gh-page-about/gh-page-about":9,"./component/gh-page-home/gh-page-home":10,"./component/gh-page-org/gh-page-org":11,"./component/gh-page-volunteer/gh-page-volunteer":12,"./component/or-navbar/or-navbar":13,"./component/vo-navbar/vo-navbar":14,"./component/vo-page-donate/vo-page-donate":15,"./component/vo-page-profile/vo-page-profile":16,"./controller/giveHub":17,"./controller/orPortal":18,"./controller/voPortal":19,"angular":2,"jquery":3}],5:[function(require,module,exports){
 angular.module('giveHub').component('ghFormLogin', {
   templateUrl: './component/gh-form-login.html',
 });
@@ -45924,6 +45925,11 @@ function ghNavbarController($scope) {
 }
 
 },{}],15:[function(require,module,exports){
+angular.module('voPortal').component('voPageDonate', {
+  templateUrl: './component/vo-page-donate.html',
+});
+
+},{}],16:[function(require,module,exports){
 angular.module('voPortal').component('voPageProfile', {
   templateUrl: './component/vo-page-profile.html',
   controller: voPageProfileController,
@@ -45932,7 +45938,6 @@ angular.module('voPortal').component('voPageProfile', {
 function voPageProfileController($scope) {
   var ctrl = this;
   this.$onInit = () => {
-    var ctrl = this;
     $.get('http://localhost:3000/api/v1/users/1').done((user) => {
       ctrl.showUser(user);
     });
@@ -45945,21 +45950,21 @@ function voPageProfileController($scope) {
   }
 }
 
-},{}],16:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 var giveHub = angular.module('giveHub', []);
 
 giveHub.controller('mainController', ($scope) => {
   $scope.route = 'home';
 });
 
-},{}],17:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 var orPortal = angular.module('orPortal', []);
 
 orPortal.controller('mainController', ($scope) => {
   $scope.route = 'dashboard';
 });
 
-},{}],18:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 var voPortal = angular.module('voPortal', []);
 
 voPortal.controller('mainController', ($scope) => {

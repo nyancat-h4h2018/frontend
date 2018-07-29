@@ -6,7 +6,6 @@ angular.module('voPortal').component('voPageProfile', {
 function voPageProfileController($scope) {
   var ctrl = this;
   this.$onInit = () => {
-    var ctrl = this;
     $.get('http://localhost:3000/api/v1/users/1').done((user) => {
       ctrl.showUser(user);
     });

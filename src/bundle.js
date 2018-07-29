@@ -19,6 +19,7 @@ const signupOrg = require('./component/gh-form-signup-org/gh-form-signup-org');
 // VoPortal Components
 const voNavbar = require('./component/vo-navbar/vo-navbar');
 const voProfile = require('./component/vo-page-profile/vo-page-profile');
+const voDonate = require('./component/vo-page-donate/vo-page-donate');
 
 // OrPortal Components
 const orNavbar = require('./component/or-navbar/or-navbar');
