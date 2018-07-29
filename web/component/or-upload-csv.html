@@ -1,6 +1,7 @@
 <div drop-zone ng-model="ctrl.data.upload" class="dropzone">
         <!-- Transcluded content -->
-        <p>Drop your CSV sheet here <span>(or click to upload)</span></p>
+        <p ng-if="ctrl.data.upload[0]">{{ ctrl.data.upload[0].name }}</p>
+        <p ng-if="!ctrl.data.upload[0]">Drop your CSV sheet here <span>(or click to upload)</span></p>
 </div>
 
-<pre>ctrl.data = {{ ctrl | json }} </pre>
+<button id="submitCSV" class="btn btn-primary float-right">Send to GiveHub</button>

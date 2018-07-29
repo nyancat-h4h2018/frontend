@@ -45951,6 +45951,12 @@ angular.module('orPortal').component('orUploadCsv', {
 function orUploadCsvController($scope) {
   var ctrl = this;
   ctrl.data = { upload: [] };
+
+  this.$onInit = () => {
+    $('#submitCSV').click(() => {
+      console.log(ctrl.data.upload[0]);
+    })
+  }
 }
 
 angular.module("orUploadCsv.directive.dropzone", []).directive("dropZone", [
@@ -45982,12 +45988,10 @@ angular.module("orUploadCsv.directive.dropzone", []).directive("dropZone", [
             e.dataTransfer.dropEffect = "copy";
         }
         function uploadFileSelect(e) {
-            console.log(this);
             e.stopPropagation();
             e.preventDefault();
             var files = e.dataTransfer ? e.dataTransfer.files : e.target.files;
             for (var i = 0, file; (file = files[i]); ++i) {
-                console.log(file);
                 var reader = new FileReader();
                 reader.onload = (function(file) {
                     return function(e) {
@@ -46002,7 +46006,6 @@ angular.module("orUploadCsv.directive.dropzone", []).directive("dropZone", [
                         for (var p in file) {
                             data[p] = file[p];
                         }
-                        console.log(data);
 
                         config.scope.$apply(function() {
                             config.model.$viewValue.push(data);
