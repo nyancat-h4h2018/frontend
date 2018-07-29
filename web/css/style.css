@@ -462,7 +462,7 @@ pre {
       max-width: 960px; } }
   @media (min-width: 1200px) {
     .container {
-      max-width: 1140px; } }
+      max-width: 960px; } }
 
 .container-fluid {
   width: 100%;
@@ -6313,6 +6313,13 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #e9ecef; } }
 
 /* Settings */
+/* Home Style */
+#navbar {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem; }
+  #navbar .active {
+    font-weight: bold; }
+
 .full-height {
   height: 100vh; }
 

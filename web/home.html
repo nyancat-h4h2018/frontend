@@ -7,8 +7,14 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/bundle.js"></script>
   </head>
-  <body ng-app="giveHub">
-    <div class="container" ng-controller="MainCtrl as Ctrl">
+  <body ng-app="giveHub" ng-controller="mainController">
+    <gh-navbar route="route"></gh-navbar>
+
+    <!-- Hero START -->
+    <gh-page-home ng-if="route == 'home'"></gh-page-home>
+    <!-- Hero END -->
+
+    <!-- <div class="container" ng-controller="MainCtrl as Ctrl">
       <div class="row justify-content-center align-items-center full-height">
         <div class="col-sm-6 col-lg-3 text-center">
           <h1>GiveHub</h1>
@@ -16,6 +22,6 @@
           <gh-form-login></gh-form-login>
         </div>
       </div>
-    </div>
+    </div> -->
   </body>
 </html>

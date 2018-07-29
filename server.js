@@ -28,6 +28,15 @@ app.listen(port, () => {
 function html(page) {
   return path.join(__dirname, folder_website, page + ".html");
 }
+
 app.get('/', (req, res, next) => {
-  res.sendFile(html('index'));
+  res.sendFile(html('home'));
+});
+
+app.get('/volunteer', (req, res, next) => {
+  res.sendFile(html('volunteer'));
+});
+
+app.get('/organization', (req, res, next) => {
+  res.sendFile(html('organization'));
 });

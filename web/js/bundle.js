@@ -45809,17 +45809,48 @@ return jQuery;
 const $ = require('jquery');
 const angular = require('angular');
 
-// Module Setup
-angular.module('giveHub', []).controller('MainCtrl', function MainCtrl() {
-
-});
+// Controllers
+const giveHub = require('./controller/giveHub');
 
 // Components
+const navbar = require('./component/gh-navbar/gh-navbar');
+const home = require('./component/gh-page-home/gh-page-home');
 const login = require('./component/gh-form-login/gh-form-login');
 
-},{"./component/gh-form-login/gh-form-login":5,"angular":2,"jquery":3}],5:[function(require,module,exports){
+},{"./component/gh-form-login/gh-form-login":5,"./component/gh-navbar/gh-navbar":6,"./component/gh-page-home/gh-page-home":7,"./controller/giveHub":8,"angular":2,"jquery":3}],5:[function(require,module,exports){
 angular.module('giveHub').component('ghFormLogin', {
   templateUrl: './component/gh-form-login.html',
+});
+
+},{}],6:[function(require,module,exports){
+angular.module('giveHub').component('ghNavbar', {
+  templateUrl: './component/gh-navbar.html',
+  controller: ghNavbarController,
+  bindings: {
+    route: '='
+  }
+});
+
+function ghNavbarController($scope) {
+  this.$onInit = function() {
+    console.log(this.route);
+  };
+
+  this.changePage = (newRoute) => {
+    this.route = newRoute;
+  }
+}
+
+},{}],7:[function(require,module,exports){
+angular.module('giveHub').component('ghPageHome', {
+  templateUrl: './component/gh-page-home.html',
+});
+
+},{}],8:[function(require,module,exports){
+var giveHub = angular.module('giveHub', []);
+
+giveHub.controller('mainController', ($scope) => {
+  $scope.route = 'home';
 });
 
 },{}]},{},[4]);

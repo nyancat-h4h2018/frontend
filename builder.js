@@ -18,17 +18,25 @@ const js_folder = 'web/js';
 const scss_folder = 'src/scss';
 const component_src_folder = 'src/component';
 const component_dest_folder = 'web/component';
+const controller_src_folder = 'src/controller';
+const html_src_folder = 'src/page';
+const html_dest_folder = 'web';
 
 /*
   Gulp Tasks
 */
-gulp.task('build', gulp.parallel(style, bundle, getComponent));
+gulp.task('build', gulp.parallel(compile, style, bundle, getComponent));
 
 gulp.task('default', gulp.series('build', watch));
 
 /*
   Functions
 */
+function compile() {
+  return gulp.src('./' + html_src_folder + '/**/*.html')
+             .pipe(gulp.dest('./' + html_dest_folder));
+}
+
 function style() {
   var bootstrapSrc = "./node_modules" + bootstrap._location + "/scss";
   return gulp.src('./' + scss_folder + '/**/*.scss')
@@ -49,7 +57,10 @@ function getComponent() {
 }
 
 function watch() {
+  gulp.watch('./' + html_src_folder + '/**/*.html').on('all', gulp.series(compile));
   gulp.watch('./' + bundle_file).on('all', gulp.series(bundle));
   gulp.watch('./' + component_src_folder + '/**/*.html').on('all', gulp.series(getComponent));
+  gulp.watch('./' + component_src_folder + '/**/*.js').on('all', gulp.series(bundle));
+  gulp.watch('./' + controller_src_folder + '/**/*.js').on('all', gulp.series(bundle));
   gulp.watch('./' + scss_folder + '/**/*.scss').on('all', gulp.series(style));
 }
