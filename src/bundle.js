@@ -7,6 +7,7 @@ const giveHub = require('./controller/giveHub');
 // Components
 const navbar = require('./component/gh-navbar/gh-navbar');
 const home = require('./component/gh-page-home/gh-page-home');
+const about = require('./component/gh-page-about/gh-page-about');
 const volunteer = require('./component/gh-page-volunteer/gh-page-volunteer');
 const org = require('./component/gh-page-org/gh-page-org');
 const login = require('./component/gh-form-login/gh-form-login');
