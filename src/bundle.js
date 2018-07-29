@@ -18,8 +18,12 @@ const signupOrg = require('./component/gh-form-signup-org/gh-form-signup-org');
 
 // VoPortal Components
 const voNavbar = require('./component/vo-navbar/vo-navbar');
-const voProfile = require('./component/vo-page-profile/vo-page-profile');
+const voDashboard = require('./component/vo-page-dashboard/vo-page-dashboard');
 const voDonate = require('./component/vo-page-donate/vo-page-donate');
+const voProfile = require('./component/vo-page-profile/vo-page-profile');
 
 // OrPortal Components
 const orNavbar = require('./component/or-navbar/or-navbar');
+const orDashboard = require('./component/or-page-dashboard/or-page-dashboard');
+const orManage = require('./component/or-page-manage/or-page-manage');
+const orProfile = require('./component/or-page-profile/or-page-profile');

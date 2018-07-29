@@ -10,5 +10,9 @@
   </head>
   <body ng-app="orPortal" ng-controller="mainController">
     <or-navbar route="route"></or-navbar>
+
+    <or-page-dashboard ng-if="route == 'dashboard'"></or-page-dashboard>
+    <or-page-manage ng-if="route == 'manage'"></or-page-manage>
+    <or-page-profile ng-if="route == 'profile'"></or-page-profile>
   </body>
 </html>
