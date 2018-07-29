@@ -46068,7 +46068,7 @@ function voPageDonateController($scope) {
     });
 
     // Get organizations
-    $.get('localhost:3000/api/v1/organizations/')
+    $.get('http://localhost:3000/api/v1/organizations/')
      .done((data) => {
        data.forEach((org) => {
          var orgInfo = MakeInfo(org);

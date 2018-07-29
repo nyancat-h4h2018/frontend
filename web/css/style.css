@@ -6321,9 +6321,9 @@ a.text-dark:hover, a.text-dark:focus {
     margin: 5px;
     font-weight: bold; }
     #navbar .nav-item :hover {
-      border: 1px solid #007bff; }
+      border: 1px solid #fa5770; }
     #navbar .nav-item .active {
-      background-color: #007bff;
+      background-color: #fa5770;
       color: #fff; }
 
 /* Volunteer Style */
