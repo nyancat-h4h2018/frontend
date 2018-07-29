@@ -10,9 +10,9 @@
   <body ng-app="giveHub" ng-controller="mainController">
     <gh-navbar route="route"></gh-navbar>
 
-    <!-- Hero START -->
     <gh-page-home ng-if="route == 'home'"></gh-page-home>
-    <!-- Hero END -->
+    <gh-page-volunteer ng-if="route == 'volunteer'"></gh-page-volunteer>
+    <gh-page-org ng-if="route == 'organization'"></gh-page-org>
 
     <!-- <div class="container" ng-controller="MainCtrl as Ctrl">
       <div class="row justify-content-center align-items-center full-height">

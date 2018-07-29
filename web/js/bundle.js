@@ -45815,14 +45815,28 @@ const giveHub = require('./controller/giveHub');
 // Components
 const navbar = require('./component/gh-navbar/gh-navbar');
 const home = require('./component/gh-page-home/gh-page-home');
+const volunteer = require('./component/gh-page-volunteer/gh-page-volunteer');
+const org = require('./component/gh-page-org/gh-page-org');
 const login = require('./component/gh-form-login/gh-form-login');
+const signupUser = require('./component/gh-form-signup-user/gh-form-signup-user');
+const signupOrg = require('./component/gh-form-signup-org/gh-form-signup-org');
 
-},{"./component/gh-form-login/gh-form-login":5,"./component/gh-navbar/gh-navbar":6,"./component/gh-page-home/gh-page-home":7,"./controller/giveHub":8,"angular":2,"jquery":3}],5:[function(require,module,exports){
+},{"./component/gh-form-login/gh-form-login":5,"./component/gh-form-signup-org/gh-form-signup-org":6,"./component/gh-form-signup-user/gh-form-signup-user":7,"./component/gh-navbar/gh-navbar":8,"./component/gh-page-home/gh-page-home":9,"./component/gh-page-org/gh-page-org":10,"./component/gh-page-volunteer/gh-page-volunteer":11,"./controller/giveHub":12,"angular":2,"jquery":3}],5:[function(require,module,exports){
 angular.module('giveHub').component('ghFormLogin', {
   templateUrl: './component/gh-form-login.html',
 });
 
 },{}],6:[function(require,module,exports){
+angular.module('giveHub').component('ghFormSignupOrg', {
+  templateUrl: './component/gh-form-signup-Org.html',
+});
+
+},{}],7:[function(require,module,exports){
+angular.module('giveHub').component('ghFormSignupUser', {
+  templateUrl: './component/gh-form-signup-user.html',
+});
+
+},{}],8:[function(require,module,exports){
 angular.module('giveHub').component('ghNavbar', {
   templateUrl: './component/gh-navbar.html',
   controller: ghNavbarController,
@@ -45841,12 +45855,22 @@ function ghNavbarController($scope) {
   }
 }
 
-},{}],7:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 angular.module('giveHub').component('ghPageHome', {
   templateUrl: './component/gh-page-home.html',
 });
 
-},{}],8:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
+angular.module('giveHub').component('ghPageOrg', {
+  templateUrl: './component/gh-page-org.html',
+});
+
+},{}],11:[function(require,module,exports){
+angular.module('giveHub').component('ghPageVolunteer', {
+  templateUrl: './component/gh-page-volunteer.html',
+});
+
+},{}],12:[function(require,module,exports){
 var giveHub = angular.module('giveHub', []);
 
 giveHub.controller('mainController', ($scope) => {
